@@ -37,7 +37,7 @@ class Page
     def self.from_url( url, opts = {}, &block )
         responses = []
 
-        opts[:precision] ||= 2
+        opts[:precision] ||= 1
         opts[:precision].times do
             HTTP::Client.get( url, opts[:http] || {} ) do |res|
                 responses << res
