@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rake', '11.3.0'
+gem 'rake'
 gem 'pry'
 
 group :docs do
@@ -11,16 +11,8 @@ end
 group :spec do
     gem 'simplecov', require: false, group: :test
 
-    gem 'rspec', '2.99.0'
+    gem 'rspec'
     gem 'faker'
-end
-
-group :prof do
-    gem 'stackprof'
-    gem 'sys-proctable'
-    gem 'ruby-mass'
-    gem 'benchmark-ips'
-    gem 'memory_profiler'
 end
 
 gemspec

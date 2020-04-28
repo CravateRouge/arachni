@@ -14,3 +14,4 @@ TODO
 coverage/
 .env
 .bundle/
+.vscode/launch.json
