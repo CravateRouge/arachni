@@ -124,9 +124,9 @@ class Reproduce
                 # Let's provide some server side debug info for code instrumentation
                 # and the like.
                 HTTP::Client.headers.merge!(
-                    'X-Arachni-Issue-Replay-Id' => Arachni::Utilities.generate_token,
-                    'X-Arachni-Issue-Seed'      => issue.vector.seed,
-                    'X-Arachni-Issue-Digest'    => issue.digest
+                    'X-A-Issue-Replay-Id' => Arachni::Utilities.generate_token,
+                    'X-A-Issue-Seed'      => issue.vector.seed,
+                    'X-A-Issue-Digest'    => issue.digest
                 )
 
                 if is_dom_vector
@@ -142,7 +142,7 @@ class Reproduce
             print_info 'You can use this to identify a narrow scope of tainted ' <<
                 'inputs (params, cookies, etc.) and sinks (response bodies, SQL '
             print_info 'queries etc.) related to this issue.'
-            print_info "It is accessible via the 'X-Arachni-Issue-Seed' header."
+            print_info "It is accessible via the 'X-A-Issue-Seed' header."
             print_line
             print_line issue.vector.seed
             print_line

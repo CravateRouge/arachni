@@ -21,7 +21,7 @@ end
 get "/link/straight" do
     default = 'default'
     return if params['input'].start_with?( default ) ||
-        !params['input'].include?( '_arachni_trainer_' )
+        !params['input'].include?( '_super_trainer_' )
 
     redirect "/link/straight/redir"
 end
@@ -35,7 +35,7 @@ end
 get "/link/append" do
     default = 'default'
     return if !params['input'].start_with?( default ) ||
-        !params['input'].include?( '_arachni_trainer_' )
+        !params['input'].include?( '_super_trainer_' )
 
     redirect "/link/append/redir"
 end
@@ -96,7 +96,7 @@ get "/cookie/straight" do
     cookies['cookie'] ||= default
 
     return if cookies['cookie'].start_with?( default ) ||
-        !cookies['cookie'].include?( '_arachni_trainer_' )
+        !cookies['cookie'].include?( '_super_trainer_' )
 
     redirect "/cookie/straight/trained"
 end
@@ -111,7 +111,7 @@ get "/cookie/append" do
     default = 'cookie value'
     cookies['cookie2'] ||= default
     return if !cookies['cookie2'].start_with?( default ) ||
-        !cookies['cookie2'].include?( '_arachni_trainer_' )
+        !cookies['cookie2'].include?( '_super_trainer_' )
 
     redirect "/cookie/append/trained"
 end
@@ -133,7 +133,7 @@ end
 get "/header/straight" do
     default = 'arachni_user'
     return if !env['HTTP_USER_AGENT'] || env['HTTP_USER_AGENT'].start_with?( default ) ||
-        !env['HTTP_USER_AGENT'].include?( '_arachni_trainer_' )
+        !env['HTTP_USER_AGENT'].include?( '_super_trainer_' )
 
     redirect "/header/straight/trained-redir"
 end
@@ -147,7 +147,7 @@ end
 get "/header/append" do
     default = 'arachni_user'
     return if !env['HTTP_USER_AGENT'] || !env['HTTP_USER_AGENT'].start_with?( default ) ||
-        !env['HTTP_USER_AGENT'].include?( '_arachni_trainer_' )
+        !env['HTTP_USER_AGENT'].include?( '_super_trainer_' )
 
     redirect "/header/append/trained-redir"
 end

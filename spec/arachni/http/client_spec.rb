@@ -616,7 +616,7 @@ describe Arachni::HTTP::Client do
                     "deflate\r\nUser-Agent: Arachni/v#{Arachni::VERSION}\r\nAccept: text/html," +
                     "application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n" +
                     "Accept-Language: en-US,en;q=0.8,he;q=0.6\r\n" +
-                    "X-Arachni-Scan-Seed: #{Arachni::Utilities.random_seed}\r\n\r\n"
+                    "X-A-Seed: #{Arachni::Utilities.random_seed}\r\n\r\n"
             )
         end
 

@@ -139,7 +139,7 @@ describe Arachni::OptionGroups::Input do
                 'stuff'   => 'stuff value',
                 'iD'      => nil
             )).to eq({
-                'nAMe'    => 'arachni_name',
+                'nAMe'    => 'super_name',
                 'usEr'    => 'arachni_user',
                 'uSR'     => 'arachni_user',
                 'pAsS'    => '5543!%arachni_secret',
@@ -171,7 +171,7 @@ describe Arachni::OptionGroups::Input do
             context '#force?' do
                 it 'overwrites it' do
                     subject.force = true
-                    expect(subject.fill( inputs )).to eq({ 'name' => 'arachni_name' })
+                    expect(subject.fill( inputs )).to eq({ 'name' => 'super_name' })
                 end
 
                 context 'when no value could be found' do

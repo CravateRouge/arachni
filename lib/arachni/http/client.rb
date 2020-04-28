@@ -85,7 +85,7 @@ class Client
     # Default 1 minute timeout for HTTP requests.
     HTTP_TIMEOUT = 60_000
 
-    SEED_HEADER_NAME = 'X-Arachni-Scan-Seed'
+    SEED_HEADER_NAME = '-X-A-Seed'
 
     # @return   [String]
     #   Framework target URL, used as reference.

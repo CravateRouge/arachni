@@ -251,7 +251,7 @@ class HTTP < Arachni::OptionGroup
     attr_accessor :ssl_version
 
     set_defaults(
-        user_agent:             "Arachni/v#{Arachni::VERSION}",
+        user_agent:             "Mozilla/5.0 (Windows NT 6.1; rv:68.7) Gecko/20100101 Firefox/68.7",
         request_timeout:        10_000,
         request_redirect_limit: 5,
         request_concurrency:    20,

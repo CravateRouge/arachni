@@ -15,14 +15,14 @@ class Input < Arachni::OptionGroup
 
     # System default input values.
     DEFAULT_VALUES = {
-        /name/i    => 'arachni_name',
-        /user/i    => 'arachni_user',
-        /usr/i     => 'arachni_user',
-        /pass/i    => '5543!%arachni_secret',
-        /txt/i     => 'arachni_text',
+        /name/i    => 'super_name',
+        /user/i    => 'super_user',
+        /usr/i     => 'super_user',
+        /pass/i    => '5543!%super_secret',
+        /txt/i     => 'super_text',
         /num/i     => '132',
         /amount/i  => '100',
-        /mail/i    => 'arachni@email.gr',
+        /mail/i    => 'super@email.gr',
         /account/i => '12',
         /id/i      => '1',
     }

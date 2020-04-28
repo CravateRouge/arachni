@@ -92,9 +92,9 @@ module Mutable
         skip:                   []
     }
 
-    EXTRA_NAME      = 'extra_arachni_input'
+    EXTRA_NAME      = 'extra_super_input'
     FUZZ_NAME       = 'Parameter name fuzzing'
-    FUZZ_NAME_VALUE = 'arachni_name_fuzz'
+    FUZZ_NAME_VALUE = 'super_name_fuzz'
 
     # Resets the inputs to their original format/values.
     def reset

@@ -88,8 +88,8 @@ class Browser
     # Unfortunately, we can't expose the HTTP user-agent for client-side
     # stuff, because Selenium needs to know that we're using a Webkit-based
     # browser in order to use the right JS code to trigger events etc.
-    USER_AGENT = 'Mozilla/5.0 AppleWebKit/538.1 (KHTML, like Gecko) ' <<
-        "Arachni/#{Arachni::VERSION} Safari/538.1"
+    USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; rv:68.7) Gecko/20100101 Firefox/68.7' <<
+        "Mozilla/5.0 (Windows NT 6.1; rv:68.7) Gecko/20100101 Firefox/68.7"
 
     # @return   [Array<Page::DOM::Transition>]
     attr_reader :transitions
@@ -1536,7 +1536,7 @@ EOJS
             #   Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1
             'phantomjs.page.settings.userAgent'                   =>
                 USER_AGENT,
-            'phantomjs.page.customHeaders.X-Arachni-Browser-Auth' =>
+            'phantomjs.page.customHeaders.X-A-Browser-Auth' =>
                 auth_token,
             'phantomjs.page.settings.resourceTimeout'             =>
                 Options.http.request_timeout,
@@ -1562,8 +1562,8 @@ EOJS
     def request_handler( request, response )
         request.performer = self
 
-        return if request.headers['X-Arachni-Browser-Auth'] != auth_token
-        request.headers.delete 'X-Arachni-Browser-Auth'
+        return if request.headers['X-A-Browser-Auth'] != auth_token
+        request.headers.delete 'X-A-Browser-Auth'
 
         print_debug_level_2 "Request: #{request.url}"
 
