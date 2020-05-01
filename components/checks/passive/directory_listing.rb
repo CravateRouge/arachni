@@ -52,21 +52,23 @@ class Arachni::Checks::DirectoryListing < Arachni::Check::Base
         # built a pah which would force a directory listing *but*
         # the web server kicked our asses...so let's run away like
         # little girls...
-        @harvested.each { |res| return if !res.ok? || res.code == 403 }
+        #@harvested.each { |res| return if !res.ok? || res.code == 403 }
 
         if !File.basename( @harvested[0].url, '?*' ).empty? &&
             same_page?( @harvested[0], @harvested[5] )
             return
         end
 
-        if same_page?( @harvested[1], @harvested[0] )  ||
-            same_page?( @harvested[1], @harvested[2] ) ||
-            same_page?( @harvested[3], @harvested[0] ) ||
-            same_page?( @harvested[3], @harvested[4] ) ||
-            @harvested[5].code != 200 || @harvested[5].body.empty?
+        # I don't know the use of that
+        # if same_page?( @harvested[1], @harvested[0] )  ||
+        #     same_page?( @harvested[1], @harvested[2] ) ||
+        #     same_page?( @harvested[3], @harvested[0] ) ||
+        #     same_page?( @harvested[3], @harvested[4] ) ||
+        if @harvested[5].code != 200 || @harvested[5].body.empty?
             return
         end
 
+        @framework.push_to_url_queue(@harvested[5].url)
         log vector: Element::Server.new( @harvested[5].url ), response: @harvested[5]
     end
 

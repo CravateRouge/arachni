@@ -427,6 +427,15 @@ access unauthorized pages.
 
         IO.write( "#{tmpdir}/index.html", erb( TEMPLATE_FILE ) )
 
+        # Write the sitemap as text when generating a HTML report
+        formated_sitemap = ""
+
+        report.sitemap.keys.map.uniq.sort.each do |url|
+            formated_sitemap+= url+"\n"
+        end
+
+        IO.write("#{tmpdir}/sitemap.txt", formated_sitemap)
+
         compress( tmpdir, outfile )
         FileUtils.rm_rf tmpdir
 
