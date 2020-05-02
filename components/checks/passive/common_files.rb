@@ -18,6 +18,10 @@ class Arachni::Checks::CommonFiles < Arachni::Check::Base
     def run
         return if page.code != 200
 
+        # Runs the check only once (at the given path) because wordlists
+        # are made to be executed at the root for pre existing directories  
+        @framework.checks.delete(self.shortname)
+
         path = get_path( page.url )
         return if audited?( path )
 
