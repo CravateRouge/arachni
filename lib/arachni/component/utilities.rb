@@ -41,6 +41,18 @@ module Utilities
         end
     end
 
+    def get_dir(&block )
+        component_path = block_given? ?
+            block.source_location.first : caller_path(1)
+
+        # The name of the component that called us.
+        component_name = File.basename( component_path, '.rb' )
+
+        # The path to the component's data file directory.
+        path  = File.expand_path( File.dirname( component_path ) ) +
+            "/#{component_name}/"
+    end
+
     extend self
 
 end
