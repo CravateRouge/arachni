@@ -49,7 +49,7 @@ class Arachni::Checks::CommonFiles < Arachni::Check::Base
             elements:         [ Element::Server ],
             author:           'Tasos "Zapotek" Laskos <tasos.laskos@arachni-scanner.com> ',
             version:          '0.2.4',
-            platforms: Arachni::Platform::Manager::PLATFORM_NAMES,
+            platforms: Arachni::Platform::Manager::FRAMEWORKS,
 
             issue:       {
                 name:            %q{Common sensitive file},

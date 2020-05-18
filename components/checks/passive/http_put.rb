@@ -16,11 +16,11 @@ class Arachni::Checks::HttpPut < Arachni::Check::Base
     end
 
     def self.body
-        @body ||= 'Created by Arachni. ' + substring
+        @body ||= 'Created by HAL. ' + substring
     end
 
     def run
-        path = "#{get_path( page.url )}Arachni-#{random_seed}"
+        path = "#{get_path( page.url )}HAL-#{random_seed}"
         return if audited?( path )
         audited( path )
 
